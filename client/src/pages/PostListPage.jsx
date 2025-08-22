@@ -1,9 +1,10 @@
 import { useState } from "react";
-import PostList from "../components/PostList";
+import PostList from "../components/PostList.jsx";
 import SideMenu from "../components/SideMenu.jsx";
 
 const PostListPage = () => {
-  const [open, setOpen] = useState(false)
+
+  const [open, setOpen] = useState(false);
   return (
     <div className="">
       <h1 className="mb-8 text-2xl">Development Blog</h1>

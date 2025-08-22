@@ -5,17 +5,17 @@ import { Schema } from "mongoose";
 var userSchema = new Schema({
     clerkUserId: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
     },
-    userName: {
+    username: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     img: {

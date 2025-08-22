@@ -44,10 +44,17 @@ app.use((error, req, res, next) => {
     })
 })
 
+// cho phép cross-origin requests
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.listen(3000, () => {
     connectDB();
     console.log("Server is running");
 })
 
-//username : ducnguyen2553
-//Password MongoDB Atlas: MUE1z6S2IPZWRGW8
+// node --env-file .env --watch index.js

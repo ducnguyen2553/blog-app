@@ -6,18 +6,18 @@ var postSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",
-        require: true
+        required: true
     },
     img: {
         type: String,
     },
     title: {
         type: String,
-        require: true,
+        required: true,
     },
     slug: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
     },
     desc: {
@@ -29,7 +29,7 @@ var postSchema = new Schema({
     },
     content: {
         type: String,
-        require: true
+        required: true
     },
     isFeatured: {
         type: Boolean,

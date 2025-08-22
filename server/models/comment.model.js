@@ -6,12 +6,12 @@ var commentSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: "User",
-        require: true
+        required: true
     },
     post: {
         type: Schema.Types.ObjectId,
         ref: "Post",
-        require: true
+        required: true
     },
     desc: {
         type: String,

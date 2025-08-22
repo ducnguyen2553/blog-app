@@ -1,20 +1,21 @@
+
+import { format } from "timeago.js"
 import MyImage from "./MyImage"
 
 
-const Comment = () => {
+const Comment = ({ comment }) => {
     return (
         <div className="p-4 bg-slate-50 rounded-xl mb-8">
             <div className="flex items-center gap-4">
-                <MyImage src="userImg.jpeg"
+                <MyImage src={comment.user.img || "/default-avatar-photo-icon-social-media-profile-sign-symbol-vector.jpg"}
                     className="w-10 h-10 rounded-full object-cover "
                     w="40" />
-                <span className="font-medium">John Doe</span>
-                <span className="text-sm text-gray-500">2 days ago</span>
+                <span className="font-medium">{comment.user.username}</span>
+                <span className="text-sm text-gray-500">{format(comment.createdAt)}</span>
             </div>
             <div className="mt-4">
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt aperiam adipisci quos incidunt vel accusantium quod ipsum?
-                    Dolorum suscipit exercitationem aliquid optio aperiam accusantium qui quod recusandae, laborum fugit quos.
+                    {comment.desc}
                 </p>
 
             </div>
