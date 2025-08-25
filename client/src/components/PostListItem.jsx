@@ -13,12 +13,12 @@ const PostListItem = ({ post }) => {
             )}
             {/* details */}
             <div className="flex flex-col gap-4 xl:w-2/3">
-                <Link to={`${post.slug}`} className="text-4xl font-bold">
+                <Link to={`/${post.slug}`} className="text-4xl font-bold">
                     {post.title}
                 </Link>
                 <div className="flex items-center gap-2 text-gray-400 text-sm">
                     <span>Written</span>
-                    <Link className="text-blue-800">{post.user.username}</Link>
+                    <Link className="text-blue-800" to={`/posts?author=${post.user.username}`}>{post.user.username}</Link>
                     <span>on</span>
                     <Link className="text-blue-800">{post.category}</Link>
                     <span>{format(post.createdAt)}</span>
@@ -26,7 +26,7 @@ const PostListItem = ({ post }) => {
                 <p>
                     {post.desc}
                 </p>
-                <Link to="/test" className="underline text-blue-800 text-sm">Read More</Link>
+                <Link to={`/${post.slug}`} className="underline text-blue-800 text-sm">Read More</Link>
             </div>
         </div>
     )
